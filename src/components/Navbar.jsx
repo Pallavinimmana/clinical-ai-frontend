@@ -1,25 +1,34 @@
-import { Link } from "react-router-dom";
-
 export default function Navbar() {
-  return (
-    <nav className="bg-indigo-700 text-white px-6 py-3 flex justify-between items-center shadow">
-      <h1 className="font-bold text-lg">Clinical AI</h1>
+  const logout = () => {
+    localStorage.removeItem("token");
+    window.location.href = "/";
+  };
 
-      <div className="space-x-4">
-        <Link to="/reports" className="hover:text-indigo-200">
+  return (
+    <nav className="bg-blue-700 text-white px-6 py-3 flex justify-between items-center shadow">
+      {/* App Title */}
+      <h1 className="text-xl font-bold">Clinical AI</h1>
+
+      {/* Navigation Links */}
+      <div className="flex gap-6 items-center text-sm font-medium">
+        <a href="/reports" className="hover:underline">
           Reports
-        </Link>
-        <Link to="/labs" className="hover:text-indigo-200">
+        </a>
+
+        <a href="/labs" className="hover:underline">
           Labs
-        </Link>
-        <Link to="/analysis" className="hover:text-indigo-200">
+        </a>
+
+        <a href="/clinical-notes" className="hover:underline">
+          Clinical Notes
+        </a>
+
+        <a href="/analysis" className="hover:underline">
           Analysis
-        </Link>
+        </a>
+
         <button
-          onClick={() => {
-            localStorage.removeItem("token");
-            window.location.href = "/";
-          }}
+          onClick={logout}
           className="bg-red-500 px-3 py-1 rounded hover:bg-red-600"
         >
           Logout

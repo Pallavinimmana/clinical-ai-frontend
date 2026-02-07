@@ -5,6 +5,7 @@ import Labs from "./pages/Labs";
 import Analysis from "./pages/Analysis";
 import Navbar from "./components/Navbar";
 import Signup from "./pages/Signup";
+import ClinicalNotes from "./pages/ClinicalNotes";
 
 
 export default function App() {
@@ -17,6 +18,7 @@ export default function App() {
         <Route path="/labs" element={<Labs />} />
         <Route path="/analysis" element={<Analysis />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/clinical-notes" element={<ClinicalNotes />} />
       </Routes>
     </BrowserRouter>
   );
